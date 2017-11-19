@@ -37,7 +37,7 @@
     name: 'landing-page',
     components: { SystemInformation },
     methods: {
-      open (link) {
+      open (link: string) {
         {{#isEnabled plugins 'vue-electron'}}this.$electron{{else}}require('electron'){{/isEnabled}}.shell.openExternal(link)
       }
     }
