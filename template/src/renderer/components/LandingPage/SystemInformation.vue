@@ -37,7 +37,7 @@
   export default Vue.extend({
     data () {
       return {
-        electron: process.versions['atom-shell'],
+        electron: '',
         {{#isEnabled plugins 'vue-router'}}
         name: 'landing-page',
         {{/isEnabled}}

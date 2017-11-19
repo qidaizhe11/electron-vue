@@ -15,7 +15,7 @@ import router from './router'
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 {{/isEnabled}}
 {{#isEnabled plugins 'axios'}}
-Vue.http = Vue.prototype.$http = axios
+Vue.prototype.$http = axios
 {{/isEnabled}}
 Vue.config.productionTip = false
 
