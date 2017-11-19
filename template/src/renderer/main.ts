@@ -3,12 +3,12 @@ import Vue from 'vue'
 import axios from 'axios'
 {{/isEnabled}}
 
-import App from './App'
+import App from './App.vue'
 {{#isEnabled plugins 'vue-router'}}
 import router from './router'
 {{/isEnabled}}
 {{#isEnabled plugins 'vuex'}}
-import store from './store'
+// import store from './store'
 {{/isEnabled}}
 
 {{#isEnabled plugins 'vue-electron'}}
@@ -19,14 +19,14 @@ Vue.http = Vue.prototype.$http = axios
 {{/isEnabled}}
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
+/* tslint:disable no-unused-expression */
 new Vue({
   components: { App },
   {{#isEnabled plugins 'vue-router'}}
   router,
   {{/isEnabled}}
   {{#isEnabled plugins 'vuex'}}
-  store,
+  // store,
   {{/isEnabled}}
   template: '<App/>'
 }).$mount('#app')
