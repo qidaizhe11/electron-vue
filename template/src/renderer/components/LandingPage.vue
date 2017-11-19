@@ -29,10 +29,11 @@
   </div>
 </template>
 
-<script>
-  import SystemInformation from './LandingPage/SystemInformation'
+<script lang="ts">
+  import Vue from 'vue'
+  import SystemInformation from './LandingPage/SystemInformation.vue'
 
-  export default {
+  export default Vue.extend({
     name: 'landing-page',
     components: { SystemInformation },
     methods: {
@@ -40,7 +41,7 @@
         {{#isEnabled plugins 'vue-electron'}}this.$electron{{else}}require('electron'){{/isEnabled}}.shell.openExternal(link)
       }
     }
-  }
+  })
 </script>
 
 <style>

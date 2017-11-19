@@ -8,13 +8,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+  import Vue from 'vue'
 {{#isEnabled plugins 'vue-router'}}
 {{else}}
-  import LandingPage from '@/components/LandingPage'
+  import LandingPage from '@/components/LandingPage.vue'
 
 {{/isEnabled}}
-  export default {
+  export default Vue.extend({
     name: '{{ name }}'{{#isEnabled plugins 'vue-router'}}{{else}},{{/isEnabled}}
 {{#isEnabled plugins 'vue-router'}}
 {{else}}
@@ -22,7 +23,7 @@
       LandingPage
     }
 {{/isEnabled}}
-  }
+  })
 </script>
 
 <style>
